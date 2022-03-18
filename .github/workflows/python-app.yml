@@ -48,9 +48,9 @@ jobs:
         GITHUB_TOKEN: ${{ github.token }}
       with:
         upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: pypeline_test.exe
+        asset_path: ./pypeline_test.exe
         asset_name: pypeline_test.exe
-        asset_content_type: application/exe
+        asset_content_type: application/octet-stream
     
 #     - uses: actions/download-artifact@v3
 #       with:
