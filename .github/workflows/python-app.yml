@@ -25,3 +25,6 @@ jobs:
     - name: Build EXE
       run: |
         pyinstaller pypeline_test.spec
+    - uses: actions/download-artifact@v3
+      with:
+        name: dist/pypeline_test.exe
