@@ -27,14 +27,14 @@ jobs:
         pyinstaller pypeline_test.spec
     - name: Display structure of downloaded files
       run: ls -R
-    - uses: actions/upload-artifact@v3
-      with:
-        name: pypeline_test.exe
-        path: dist/
-        retention-days: 5
+#     - uses: actions/upload-artifact@v3
+#       with:
+#         name: pypeline_test.exe
+#         path: dist/
+#         retention-days: 5
     - name: Build project # This would actually build your project, using zip for an example artifact
       run: |
-        zip --junk-paths my-artifact pypeline_test.exe
+        zip --junk-paths my-artifact dist/pypeline_test.exe
     - name: Create Release
       id: create_release
       uses: actions/create-release@v1
