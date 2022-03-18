@@ -25,6 +25,13 @@ jobs:
     - name: Build EXE
       run: |
         pyinstaller pypeline_test.spec
-    - uses: actions/download-artifact@v3
+    - name: Display structure of downloaded files
+      run: ls -R
+    - uses: actions/upload-artifact@v3
       with:
-        name: dist/pypeline_test.exe
+        name: pypeline_test.exe
+        path: dist/
+    
+#     - uses: actions/download-artifact@v3
+#       with:
+#         name: dist/pypeline_test.exe
