@@ -25,13 +25,13 @@ jobs:
     - name: Build EXE
       run: |
         pyinstaller pypeline_test.spec
-#     - name: Display structure of downloaded files
-#       run: ls -R
-#     - uses: actions/upload-artifact@v3
-#       with:
-#         name: pypeline_test.exe
-#         path: dist/
-#         retention-days: 5
+    - name: Display structure of downloaded files
+      run: ls -R
+    - uses: actions/upload-artifact@v3
+      with:
+        name: pypeline_test.exe
+        path: dist/
+        retention-days: 5
     - name: Create Release
       id: create_release
       uses: actions/create-release@v1
@@ -48,7 +48,7 @@ jobs:
         GITHUB_TOKEN: ${{ github.token }}
       with:
         upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: dist/pypeline_test.exe
+        asset_path: pypeline_test.exe
         asset_name: pypeline_test.exe
         asset_content_type: application/exe
     
