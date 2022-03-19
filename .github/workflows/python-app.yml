@@ -30,6 +30,7 @@ jobs:
         cd dist
         dir
         tar.exe -a -c -f pypeline_test.zip pypeline_test.exe
+        dir
     - uses: actions/upload-artifact@v3
       with:
         name: my-artifact
