@@ -30,10 +30,12 @@ jobs:
         cd dist
         dir
         tar.exe -a -c -f pypeline_test.zip pypeline_test.exe
-#     - uses: actions/upload-artifact@v3
-#       with:
-#         name: pypeline_test.exe
-#         path: dist/
+    - uses: actions/upload-artifact@v3
+      with:
+        name: my-artifact
+        path: dist/pypeline_test.zip
+        retention-days: 5
+        
     - name: Create Release
       id: create_release
       uses: actions/create-release@v1
@@ -50,8 +52,8 @@ jobs:
         GITHUB_TOKEN: ${{ github.token }}
       with:
         upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: dist/pypeline_test.zip
-        asset_name: pypeline_tes
+        asset_path: my-artifact
+        asset_name: pypeline_test.zip
         asset_content_type: application/zip
     
 #     - uses: actions/download-artifact@v3
