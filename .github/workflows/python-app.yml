@@ -51,7 +51,7 @@ jobs:
       with:
         upload_url: ${{ steps.create_release.outputs.upload_url }}
         asset_path: dist/pypeline_test.zip
-        asset_name: pypeline_test.zip
+        asset_name: pypeline_tes
         asset_content_type: application/zip
     
 #     - uses: actions/download-artifact@v3
