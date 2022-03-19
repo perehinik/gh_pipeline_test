@@ -25,12 +25,9 @@ jobs:
     - name: Build EXE
       run: |
         pyinstaller pypeline_test.spec
-    - name: Go to dist folder
+    - name: Go to dist folder and create zip
       run: |
         cd dist
-        dir
-    - name: Create zip
-      run: |
         dir
         zip my-artifact pypeline_test.exe
     - uses: actions/upload-artifact@v3
