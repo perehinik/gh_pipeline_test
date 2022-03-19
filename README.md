@@ -1,2 +1,2 @@
-# gh_pypeline_test
-Just a test of github pypelines
+# gh_pipeline_test
+Just a test of github pipelines
