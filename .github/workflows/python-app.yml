@@ -25,15 +25,14 @@ jobs:
     - name: Build EXE
       run: |
         pyinstaller pypeline_test.spec
-    - name: Go to dist folder and create zip
+    - name: Go to dist folder
       run: |
         cd dist
         dir
-        zip my-artifact pypeline_test.exe
-    - uses: actions/upload-artifact@v3
-      with:
-        name: pypeline_test.exe
-        path: dist/
+#     - uses: actions/upload-artifact@v3
+#       with:
+#         name: pypeline_test.exe
+#         path: dist/
     - name: Create Release
       id: create_release
       uses: actions/create-release@v1
@@ -50,9 +49,9 @@ jobs:
         GITHUB_TOKEN: ${{ github.token }}
       with:
         upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: ./my-artifact.zip
-        asset_name: my-artifact.zip
-        asset_content_type: application/zip
+        asset_path: dist/pypeline_test.exe
+        asset_name: pypeline_test.exe
+        asset_content_type: application/vnd.microsoft.portable-executable
     
 #     - uses: actions/download-artifact@v3
 #       with:
