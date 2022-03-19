@@ -29,6 +29,7 @@ jobs:
       run: |
         cd dist
         dir
+        tar.exe -a -c -f pypeline_test.zip pypeline_test.exe
 #     - uses: actions/upload-artifact@v3
 #       with:
 #         name: pypeline_test.exe
@@ -49,9 +50,9 @@ jobs:
         GITHUB_TOKEN: ${{ github.token }}
       with:
         upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: dist/pypeline_test.exe
-        asset_name: pypeline_test.exe
-        asset_content_type: application/vnd.microsoft.portable-executable
+        asset_path: dist/pypeline_test.zip
+        asset_name: pypeline_test.zip
+        asset_content_type: application/zip
     
 #     - uses: actions/download-artifact@v3
 #       with:
