@@ -52,7 +52,7 @@ jobs:
         GITHUB_TOKEN: ${{ github.token }}
       with:
         upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: my-artifact
+        asset_path: dist/pypeline_test.zip
         asset_name: pypeline_test.zip
         asset_content_type: application/zip
     
